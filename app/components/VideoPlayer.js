@@ -8,7 +8,7 @@ export default class VideoPlayer extends Component {
     render() {
         const {videoId} = this.props;
         return (
-            <div>
+            <div className='video-player'>
                 {videoId ?
                     <iframe type="text/html"
                             src={`http://www.youtube.com/embed/${videoId}?autoplay=1`}

@@ -9,11 +9,11 @@ export default class VideoList extends Component {
     render() {
         const {videos, selectVideo} = this.props;
         return (
-            <div>
+            <div className='video-list'>
                 {videos.map(video =>
-                    <div key={video.id}>
-                        <div>{video.title}</div>
+                    <div className='video-sample' key={video.id}>
                         <img src={video.thumbnail.url} onClick={() => selectVideo(video.id)}/>
+                        <div className='video-title'>{video.title}</div>
                     </div>)
                 }
             </div>
