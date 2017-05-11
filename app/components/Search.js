@@ -19,10 +19,10 @@ export default class Search extends Component {
     render() {
         const {searchVideos} = this.props;
         return (
-            <div>
+            <form onSubmit={(e) => {e.preventDefault(); searchVideos(this.state.search)}}>
                 <input type='text' value={this.state.search} onChange={this.updateSearch.bind(this)}/>
-                <button type='submit' onClick={() => searchVideos(this.state.search)}>Search</button>
-            </div>
+                <button type='submit'>Search</button>
+            </form>
         );
     }
 }

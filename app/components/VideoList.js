@@ -14,7 +14,8 @@ export default class VideoList extends Component {
                     <div key={video.id}>
                         <div>{video.title}</div>
                         <img src={video.thumbnail.url} onClick={() => selectVideo(video.id)}/>
-                    </div>)}
+                    </div>)
+                }
             </div>
         );
     }

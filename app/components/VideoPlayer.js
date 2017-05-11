@@ -7,7 +7,6 @@ export default class VideoPlayer extends Component {
 
     render() {
         const {videoId} = this.props;
-
         return (
             <div>
                 {videoId ?
