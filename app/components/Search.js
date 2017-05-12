@@ -9,19 +9,26 @@ export default class Search extends Component {
         super(props);
         this.state = {
             search: ''
-        }
+        };
+
+        this.updateSearch = this.updateSearch.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    updateSearch(evt){
-        this.setState({search: evt.target.value});
+    updateSearch(event){
+        this.setState({search: event.target.value});
+    }
+
+    handleSubmit(event){
+        event.preventDefault();
+        this.props.searchVideos(this.state.search);
     }
 
     render() {
-        const {searchVideos} = this.props;
         return (
             <div className="search-container">
-            <form onSubmit={(e) => {e.preventDefault(); searchVideos(this.state.search)}}>
-                <input type='text' value={this.state.search} onChange={this.updateSearch.bind(this)}/>
+            <form onSubmit={this.handleSubmit}>
+                <input type='text' value={this.state.search} onChange={this.updateSearch}/>
                 <button type='submit'>Search</button>
             </form>
             </div>

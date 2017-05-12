@@ -10,12 +10,12 @@ export default class VideoPlayer extends Component {
         return (
             <div className='video-player'>
                 {videoId ?
-                    <iframe type="text/html"
-                            src={`http://www.youtube.com/embed/${videoId}?autoplay=1`}
+                    <iframe src={`http://www.youtube.com/embed/${videoId}?autoplay=1`}
                             frameBorder="0">
                     </iframe>
                     :
-                    <div>Select a video!</div>}
+                    <div>Select a video!</div>
+                }
             </div>
         );
     }
