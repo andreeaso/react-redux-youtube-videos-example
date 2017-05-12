@@ -20,7 +20,8 @@ export const searchVideos = (searchText) => {
 export const videosActionHandler = handleActions({
     [SEARCH_SUCCESS]: (state, action) => {
         return {
-            ...state, videoList: action.payload.map(video => {
+            ...state,
+            videoList: action.payload.map(video => {
                 return {id: video.id.videoId, title: video.snippet.title, thumbnail: video.snippet.thumbnails.default}
             })
         };
