@@ -1,0 +1,26 @@
+@mixin font($fontSize){
+    font-size: $fontSize;
+}
+
+.container{
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.container form{
+    display: inline-block;
+    width: 640px;
+}
+
+.container form input{
+    width: 80%;
+    @include font(16px);
+    padding: 2px 6px;
+}
+
+.container form button{
+    @include font(16px);
+    background: #DCDCDC;
+    border: solid 1px transparent;
+    box-shadow: none;
+}

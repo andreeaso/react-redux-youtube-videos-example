@@ -33,12 +33,11 @@ const config = {
     loaders: [
       {
         test: /\.css$/,
-        loaders: ['style', 'css'],
-        include: path.join(__dirname, APP_FOLDER)
+        loader: 'style!css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!resolve-url!sass?outputStyle=expanded&sourceMap',
       },
       {
         test: /\.scss$/,
-        loaders: ['style', 'css', 'postcss', 'sass']
+        loaders: ['style', 'css?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]', 'postcss', 'sass']
       },
       {
         test: /\.jsx?$/,

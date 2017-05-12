@@ -1,4 +1,5 @@
 import React, {Component, PropTypes} from 'react';
+import styles from './Search.scss';
 
 export default class Search extends Component {
     static propTypes = {
@@ -26,7 +27,7 @@ export default class Search extends Component {
 
     render() {
         return (
-            <div className="search-container">
+            <div className={styles.container}>
             <form onSubmit={this.handleSubmit}>
                 <input type='text' value={this.state.search} onChange={this.updateSearch}/>
                 <button type='submit'>Search</button>

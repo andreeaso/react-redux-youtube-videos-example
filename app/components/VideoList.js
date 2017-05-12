@@ -1,4 +1,5 @@
 import React, {Component, PropTypes} from 'react';
+import styles from './VideoList.scss';
 
 export default class VideoList extends Component {
     static propTypes = {
@@ -9,11 +10,11 @@ export default class VideoList extends Component {
     render() {
         const {videos, selectVideo} = this.props;
         return (
-            <div className='video-list'>
+            <div className={styles.list}>
                 {videos.map(video =>
-                    <div className='video-sample' key={video.id}>
+                    <div className={styles.sample} key={video.id}>
                         <img src={video.thumbnail.url} onClick={() => selectVideo(video.id)}/>
-                        <div className='video-title'>{video.title}</div>
+                        <div className={styles.title}>{video.title}</div>
                     </div>)
                 }
             </div>

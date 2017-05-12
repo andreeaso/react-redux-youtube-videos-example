@@ -1,4 +1,5 @@
 import React, {Component, PropTypes} from 'react';
+import styles from './VideoPlayer.scss';
 
 export default class VideoPlayer extends Component {
     static propTypes = {
@@ -8,7 +9,7 @@ export default class VideoPlayer extends Component {
     render() {
         const {videoId} = this.props;
         return (
-            <div className='video-player'>
+            <div className={styles.player}>
                 {videoId ?
                     <iframe src={`http://www.youtube.com/embed/${videoId}?autoplay=1`}
                             frameBorder="0">
